@@ -4,7 +4,8 @@ let button = document.querySelector('button');
 
 function displayError(){
     let input = document.querySelector('input').value;
-    if(input == null || input == ""){
+    let email = /^[a-zA-Z0-9.-_]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    if(email.test(input) != true){
         inputs.style.border ="1px solid red";
         error.style.display ="block";
         // alert("Name cant be blank");
@@ -16,3 +17,4 @@ function displayError(){
 }
 
 button.addEventListener("click", displayError);
+
